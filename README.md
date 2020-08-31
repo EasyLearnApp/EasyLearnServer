@@ -51,3 +51,9 @@ Server Development for the EasyLearn Project
 ## Seeder
 
 php spark db:seed TeacherSeeder
+
+## Language
+
+In the file app\Config\App.php, register the desired language (english, for example) in `public $defaultLocale = 'en'`;
+
+Use the function lang(), as following `lang('File.index', [...$params])`;
