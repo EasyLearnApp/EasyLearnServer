@@ -47,3 +47,7 @@ Server Development for the EasyLearn Project
 
     php spark migrate:rollback
 ```
+
+## Seeder
+
+php spark db:seed TeacherSeeder
