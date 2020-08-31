@@ -8,30 +8,11 @@ class TeacherSeeder extends \CodeIgniter\Database\Seeder
 {
     public function run()
     {
-        $data = [
-            [
-                'name'        => 'Andy',
-                'address'     => '8733 Apple Street, 10',
-                'email'       => "andy@gmail.com",
-                'created_at'  => Time::now(),
-                'updated_at'  => Time::now()
-            ],
-            [
-                'name'        => 'Buddy',
-                'address'     => '643 Banana Street, 135',
-                'email'       => "buddy@gmail.com",
-                'created_at'  => Time::now(),
-                'updated_at'  => Time::now()
-            ],
-            [
-                'name'        => 'Anie',
-                'address'     => '112 Lemon Street, 121',
-                'email'       => "anie@gmail.com",
-                'created_at'  => Time::now(),
-                'updated_at'  => Time::now()
-            ]
-        ];
+        $this->db->table('teachers')->insertBatch($this->data());
+    }
 
-        $this->db->table('teachers')->insertBatch($data);
+    public function data(): array
+    {
+        return json_decode(file_get_contents(__DIR__ . '/Teachers.JSON'));
     }
 }
