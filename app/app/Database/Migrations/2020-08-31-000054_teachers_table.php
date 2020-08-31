@@ -17,17 +17,17 @@ class TeachersTable extends Migration
 			],
 			'name' => [
 				'type' => 'VARCHAR',
-				'constraint' => '32',
+				'constraint' => 32,
 				'null' => false,
 			],
 			'email' => [
 				'type' => 'TEXT',
-				'constraint' => '32',
+				'constraint' => 32,
 				'null' => false,
 			],
 			'address' => [
 				'type' => 'TEXT',
-				'constraint' => '32',
+				'constraint' => 32,
 				'null' => false,
 			],
 			'created_at' => [
