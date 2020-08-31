@@ -18,14 +18,27 @@ class TeachersTable extends Migration
 			'name' => [
 				'type' => 'VARCHAR',
 				'constraint' => '32',
+				'null' => false,
 			],
-			'detail' => [
+			'email' => [
 				'type' => 'TEXT',
-				'null' => true,
+				'constraint' => '32',
+				'null' => false,
 			],
-			'created_at' => ['type' => 'timestamp'],
-			'updated_at' => ['type' => 'timestamp'],
-			'deleted_at' => ['type' => 'timestamp']
+			'address' => [
+				'type' => 'TEXT',
+				'constraint' => '32',
+				'null' => false,
+			],
+			'created_at' => [
+				'type' => 'timestamp'
+			],
+			'updated_at' => [
+				'type' => 'timestamp'
+			],
+			'deleted_at' => [
+				'type' => 'timestamp'
+			]
 		]);
 
 		$this->forge->addKey('id', true);
