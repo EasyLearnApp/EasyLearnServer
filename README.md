@@ -14,6 +14,8 @@ Server Development for the EasyLearn Project
 
 ```
     cd app
+
+    composer install
     
     php spark serve
 ```
@@ -50,7 +52,9 @@ Server Development for the EasyLearn Project
 
 ## Seeder
 
-php spark db:seed TeacherSeeder
+```
+    php spark db:seed TeacherSeeder
+```
 
 ## Language
 
