@@ -72,9 +72,9 @@ class TeacherController extends Controller
     {
         $teacher = \App\Teacher::find($id);
 
-        $teacher->name = $request->name ?? $teacher->name;
-        $teacher->email = $request->email ?? $teacher->email;
-        $teacher->address = $request->address ?? $teacher->address;
+        foreach ((new \App\Teacher())->fillable as $property) {
+            $teacher->{$property} = $request->{$property} ?? $teacher->{$property};
+        }
 
         $teacher->save();
 
