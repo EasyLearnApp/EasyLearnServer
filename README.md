@@ -4,10 +4,44 @@ Server Development for the EasyLearn Project
 
 ## CodeIgniter
 
-<https://codeigniter.com>
+<https://laravel.com>
 
 ```
-    composer create-project codeigniter4/appstarter app
+    composer create-project --prefer-dist laravel/laravel app
+```
+
+## Controllers
+
+```
+    php artisan make:controller TeacherController --resource
+```
+
+## Models
+
+```
+    php artisan make:model Teacher
+```
+
+## Database
+
+```
+    sudo mysql
+
+    DROP USER 'api'@'localhost';
+
+    CREATE DATABASE api;
+
+    CREATE USER 'api'@'localhost' IDENTIFIED BY 'P@ssw0rd';
+
+    GRANT ALL PRIVILEGES ON api . * TO 'api'@'localhost';
+
+    FLUSH PRIVILEGES;
+```
+
+## Migrations
+
+```
+    php artisan make:migration CreateTeachersTable
 ```
 
 ## Running
@@ -16,48 +50,18 @@ Server Development for the EasyLearn Project
     cd app
 
     composer install
+
+    php artisan migrate:fresh --seed
     
-    php spark serve
+    php artisan serve
 ```
 
 ## Address
 
-<http://localhost:8080>
-
-## Database
-
-```
-    sudo mysql
-
-    DROP USER 'codeigniter'@'localhost';
-
-    CREATE DATABASE codeigniter;
-
-    CREATE USER 'codeigniter'@'localhost' IDENTIFIED BY 'P@ssw0rd';
-
-    GRANT ALL PRIVILEGES ON codeigniter . * TO 'codeigniter'@'localhost';
-
-    FLUSH PRIVILEGES;
-```
-
-## Migrations
-
-```
-    php spark migrate
-    
-    php spark migrate:create <filename>
-
-    php spark migrate:rollback
-```
+<http://127.0.0.1:8000>
 
 ## Seeder
 
 ```
-    php spark db:seed TeacherSeeder
+    php artisan make:seeder TeachersSeeder
 ```
-
-## Language
-
-In the file app\Config\App.php, register the desired language (english, for example) in `public $defaultLocale = 'en'`;
-
-Use the function lang(), as following `lang('File.index', [...$params])`;
