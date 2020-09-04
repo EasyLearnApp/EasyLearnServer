@@ -47,16 +47,26 @@ Server Development for the EasyLearn Project
 ## Running
 
 ```
+    git clone https://github.com/MagicalStrangeQuark/EasyLearnServer
+```
+
+```
     cd app
 
     composer install
+```
 
+Configure the database, copying the .env.example to .env and setting the database
+
+```
+    cp ./app/.env.example ./app/.env
+```
+
+```
     php artisan migrate:fresh --seed
     
     php artisan key:generate
 
-    php artisan test
-    
     php artisan serve
 ```
 
@@ -64,13 +74,17 @@ Server Development for the EasyLearn Project
 
 Enable SQLite Driver in /etc/php/php.ini
 
-php artisan migrate
+```
+    touch ./database/database.sqlite
 
-php artisan config:cache
+    php artisan config:cache
 
-php artisan config:clear
+    php artisan config:clear
 
-php artisan config:cache --env=testing
+    php artisan config:cache --env=testing
+
+    php artisan test
+```
 
 ## Address
 
