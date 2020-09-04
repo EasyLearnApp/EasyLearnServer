@@ -17,9 +17,9 @@ class CreateTeachersTable extends Migration
             $table->id();
             $table->timestamps();
             $table->softDeletes();
-            $table->string('name', 32)->nullable(false)->unique();
-            $table->string('email', 32)->nullable(false)->unique();
-            $table->string('address', 32)->nullable(false)->unique();
+            $table->string('name', 64)->nullable(false)->unique();
+            $table->string('email', 64)->nullable(false)->unique();
+            $table->string('address', 64)->nullable(false)->unique();
         });
     }
 

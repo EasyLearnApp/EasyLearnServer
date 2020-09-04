@@ -34,7 +34,9 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $teacher = \App\Teacher::create($request->all());
+
+        return response()->json($teacher, 201);
     }
 
     /**
