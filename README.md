@@ -53,6 +53,8 @@ Server Development for the EasyLearn Project
 
     php artisan migrate:fresh --seed
     
+    php artisan key:generate
+    
     php artisan serve
 ```
 
@@ -61,6 +63,10 @@ Server Development for the EasyLearn Project
 Enable SQLite Driver in /etc/php/php.ini
 
 php artisan migrate
+
+php artisan config:cache
+
+php artisan config:clear
 
 php artisan config:cache --env=testing
 
