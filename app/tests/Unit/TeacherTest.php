@@ -6,6 +6,13 @@ use Tests\TestCase;
 
 class TeacherTest extends TestCase
 {
+    /** @var array */
+    private array $data = [
+        "name" => "Wesley Flôres",
+        "email" => "wesleyfloresterres@gmail.com",
+        "address" => "Rua José Leopoldo Troes, 57"
+    ];
+
     /**
      * A basic unit test example.
      *
@@ -18,15 +25,18 @@ class TeacherTest extends TestCase
 
     public function test_can_create_an_teacher()
     {
-        $data = [
-            "name" => "Wesley Flôres",
-            "email" => "wesleyfloresterres@gmail.com",
-            "address" => "Rua José Leopoldo Troes, 57"
-        ];
-
-        $this->post(route('teachers.store'), $data)
+        $this->post(route('teachers.store'), $this->data)
             ->assertStatus(201)
-            ->assertJson($data);
+            ->assertJson($this->data);
+    }
+
+    public function test_can_show_an_teacher()
+    {
+        $data = $this->post(route('teachers.store'), $this->data);
+
+        $id = $data->getData()->id;
+
+        $this->assertEquals((array) $data->getData(), $this->get(route('teachers.show', $id))->json());
     }
 
     /**

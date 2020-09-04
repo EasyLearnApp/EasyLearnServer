@@ -8,4 +8,7 @@ class Teacher extends Model
 {
     /** @var array */
     protected $fillable = ['name', 'email', 'address'];
+
+    /** @var string */
+    protected $hidden = ['deleted_at'];
 }
