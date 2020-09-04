@@ -54,6 +54,8 @@ Server Development for the EasyLearn Project
     php artisan migrate:fresh --seed
     
     php artisan key:generate
+
+    php artisan test
     
     php artisan serve
 ```
