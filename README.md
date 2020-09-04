@@ -56,6 +56,14 @@ Server Development for the EasyLearn Project
     php artisan serve
 ```
 
+## Tests
+
+Enable SQLite Driver in /etc/php/php.ini
+
+php artisan migrate
+
+php artisan config:cache --env=testing
+
 ## Address
 
 <http://127.0.0.1:8000>
