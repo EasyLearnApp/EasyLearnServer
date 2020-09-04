@@ -13,7 +13,7 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        return \Illuminate\Support\Facades\Response::make(\App\Teacher::all(), 200)->header('Content-Type', 'application/json');
+        return response()->json(\App\Teacher::all(), 200);
     }
 
     /**
@@ -47,7 +47,7 @@ class TeacherController extends Controller
      */
     public function show($id)
     {
-        return \Illuminate\Support\Facades\Response::make(\App\Teacher::find($id), 200)->header('Content-Type', 'application/json');
+        return response()->json(\App\Teacher::find($id), 200);
     }
 
     /**
@@ -70,7 +70,15 @@ class TeacherController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $teacher = \App\Teacher::find($id);
+
+        $teacher->name = $request->name ?? $teacher->name;
+        $teacher->email = $request->email ?? $teacher->email;
+        $teacher->address = $request->address ?? $teacher->address;
+
+        $teacher->save();
+
+        return response()->json(\App\Teacher::find($id), 200);
     }
 
     /**
@@ -81,6 +89,8 @@ class TeacherController extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\Teacher::find($id)->delete();
+
+        return response()->json([], 200);
     }
 }
