@@ -1,8 +1,8 @@
 # EasyLearnServer
 
-Server Development for the EasyLearn Project
+Server development for EasyLearn application
 
-## CodeIgniter
+## Laravel
 
 <https://laravel.com>
 
@@ -88,7 +88,7 @@ Enable SQLite Driver in /etc/php/php.ini
 
 ## Address
 
-<http://127.0.0.1:8000>
+Open <http://127.0.0.1:8000>
 
 ## Seeder
 
