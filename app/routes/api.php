@@ -18,7 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 Route::prefix('/v1')->group(function () {
     Route::resource('teachers', 'TeacherController');
+    Route::resource('students', 'StudentController');
+    Route::resource('grades', 'GradeController');
 });
