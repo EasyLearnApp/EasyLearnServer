@@ -86,6 +86,8 @@ Enable SQLite Driver in /etc/php/php.ini
     php artisan make:test TeacherTest --unit
 
     php artisan make:test StudentTest --unit
+
+    php artisan make:test GradeTest --unit
 ```
 
 ## Address
