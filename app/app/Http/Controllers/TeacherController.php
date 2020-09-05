@@ -89,7 +89,7 @@ class TeacherController extends Controller
      */
     public function destroy($id)
     {
-        \App\Teacher::find($id)->delete();
+        $status = \App\Teacher::find($id)->delete();
 
         return response()->json([], 200);
     }
