@@ -76,7 +76,7 @@ class TeacherController extends Controller
             $teacher->{$property} = $request->{$property} ?? $teacher->{$property};
         }
 
-        $teacher->save();
+        $status = $teacher->save();
 
         return response()->json(\App\Teacher::find($id), 200);
     }

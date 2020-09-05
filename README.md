@@ -35,9 +35,7 @@ Server development for EasyLearn application
 
     REVOKE ALL, GRANT OPTION FROM api@localhost;
 
-    REVOKE ALL, GRANT OPTION FROM api@localhost;
-
-    GRANT SELECT, INSERT ON api.* TO api@localhost;
+    GRANT SELECT, INSERT, DROP, CREATE, ALTER, UPDATE, DELETE ON api.* TO api@localhost;
 
     FLUSH PRIVILEGES;
 ```
@@ -86,6 +84,8 @@ Enable SQLite Driver in /etc/php/php.ini
     php artisan config:clear
 
     php artisan config:cache --env=testing
+
+    php artisan migrate --database=sqlite
 
     php artisan test
 ```
