@@ -68,17 +68,15 @@ class TeacherController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, \App\Teacher $teacher)
     {
-        $teacher = \App\Teacher::find($id);
-
         foreach ((new \App\Teacher())->fillable as $property) {
             $teacher->{$property} = $request->{$property} ?? $teacher->{$property};
         }
 
         $status = $teacher->save();
 
-        return response()->json(\App\Teacher::find($id), 200);
+        return response()->json($teacher, 200);
     }
 
     /**
