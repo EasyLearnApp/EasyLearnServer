@@ -82,12 +82,12 @@ class TeacherController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Teacher $teacher
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(\App\Teacher $teacher)
     {
-        $status = \App\Teacher::find($id)->delete();
+        $status = $teacher->delete();
 
         return response()->json([], 200);
     }
