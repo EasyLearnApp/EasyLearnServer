@@ -53,7 +53,7 @@ Server development for EasyLearn application
 Configure the database, copying the .env.example to .env and setting the database
 
 ```
-    cp ./app/.env.example ./app/.env
+    cp .env.example .env
 ```
 
 ```
@@ -78,6 +78,8 @@ Enable SQLite Driver in /etc/php/php.ini
     php artisan config:cache --env=testing
 
     php artisan migrate --database=sqlite
+
+    php artisan key:generate
 
     php artisan test
 ```
