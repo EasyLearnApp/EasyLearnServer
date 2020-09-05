@@ -10,16 +10,14 @@ Server development for EasyLearn application
     composer create-project --prefer-dist laravel/laravel app
 ```
 
-## Controllers
+## Controllers, Models and Migrations
 
 ```
-    php artisan make:controller TeacherController --resource
-```
+    php artisan make:model Teacher -mcr
 
-## Models
+    php artisan make:model Student -mcr
 
-```
-    php artisan make:model Teacher
+    php artisan make:model Grade -mcr
 ```
 
 ## Database
@@ -38,12 +36,6 @@ Server development for EasyLearn application
     GRANT SELECT, INSERT, DROP, CREATE, ALTER, UPDATE, DELETE ON api.* TO api@localhost;
 
     FLUSH PRIVILEGES;
-```
-
-## Migrations
-
-```
-    php artisan make:migration CreateTeachersTable
 ```
 
 ## Running
@@ -90,6 +82,12 @@ Enable SQLite Driver in /etc/php/php.ini
     php artisan test
 ```
 
+```
+    php artisan make:test TeacherTest --unit
+
+    php artisan make:test StudentTest --unit
+```
+
 ## Address
 
 Open <http://127.0.0.1:8000>
@@ -98,4 +96,8 @@ Open <http://127.0.0.1:8000>
 
 ```
     php artisan make:seeder TeachersSeeder
+
+    php artisan make:seeder StudentsSeeder
+
+    php artisan make:seeder ClassesSeeder
 ```
