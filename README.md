@@ -33,7 +33,11 @@ Server development for EasyLearn application
 
     CREATE USER 'api'@'localhost' IDENTIFIED BY 'P@ssw0rd';
 
-    GRANT ALL PRIVILEGES ON api . * TO 'api'@'localhost';
+    REVOKE ALL, GRANT OPTION FROM api@localhost;
+
+    REVOKE ALL, GRANT OPTION FROM api@localhost;
+
+    GRANT SELECT, INSERT ON api.* TO api@localhost;
 
     FLUSH PRIVILEGES;
 ```
