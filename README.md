@@ -102,6 +102,20 @@ Enable SQLite Driver in /etc/php/php.ini
     mysql --user apieasylearn --host db4free.net --database apieasylearn -p
 ```
 
+## Deploy Routes
+
+### Teachers
+
+https://easy-learn-api.herokuapp.com/api/v1/teachers
+
+### Students
+
+https://easy-learn-api.herokuapp.com/api/v1/students
+
+### Grades
+
+https://easy-learn-api.herokuapp.com/api/v1/grades
+
 ## Address
 
 Open <http://127.0.0.1:8000>
