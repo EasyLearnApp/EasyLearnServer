@@ -92,6 +92,16 @@ Enable SQLite Driver in /etc/php/php.ini
     php artisan make:test GradeTest --unit
 ```
 
+## Heroku
+
+<https://dev.to/nedsoft/how-to-host-a-laravel-app-with-mysql-database-on-heroku-52np>
+
+## Connect to Database
+
+```
+    mysql --user apieasylearn --host db4free.net --database apieasylearn -p
+```
+
 ## Address
 
 Open <http://127.0.0.1:8000>
