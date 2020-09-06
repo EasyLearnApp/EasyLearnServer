@@ -1,6 +1,14 @@
-# EasyLearnServer
+<p align="center">
+    <img src="https://img.shields.io/github/license/MagicalStrangeQuark/EasyLearnServer"/>
+    <img src="https://img.shields.io/github/last-commit/MagicalStrangeQuark/EasyLearnServer"/>
+    <img src="https://img.shields.io/circleci/build/github/MagicalStrangeQuark/EasyLearnServer/master"/>
+    <img src="https://img.shields.io/github/languages/code-size/MagicalStrangeQuark/EasyLearnServer"/>
+    <img src="https://img.shields.io/github/issues/MagicalStrangeQuark/EasyLearnServer"/>
+</p>
 
-Server development for EasyLearn application
+<h1 align="center">EasyLearnServer</h1>
+
+<p align="center">Server development for <strong>EasyLearn</strong> application</p>
 
 ## Laravel
 
@@ -92,7 +100,7 @@ Enable SQLite Driver in /etc/php/php.ini
     php artisan make:test GradeTest --unit
 ```
 
-## Heroku
+## Heroku Guide
 
 <https://dev.to/nedsoft/how-to-host-a-laravel-app-with-mysql-database-on-heroku-52np>
 
@@ -106,15 +114,33 @@ Enable SQLite Driver in /etc/php/php.ini
 
 ### Teachers
 
+#### Index
+
 https://easy-learn-api.herokuapp.com/api/v1/teachers
+
+#### Show
+
+https://easy-learn-api.herokuapp.com/api/v1/teachers/{:n}
 
 ### Students
 
+#### Index
+
 https://easy-learn-api.herokuapp.com/api/v1/students
+
+#### Show
+
+https://easy-learn-api.herokuapp.com/api/v1/students/{:n}
 
 ### Grades
 
+#### Index
+
 https://easy-learn-api.herokuapp.com/api/v1/grades
+
+#### Show
+
+https://easy-learn-api.herokuapp.com/api/v1/grades/{:n}
 
 ## Address
 
